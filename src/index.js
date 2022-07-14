@@ -1,20 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const h1 = <h1>"hello world"</h1>;
-const el = (
-    <div>
-        <div>
+function App() {
+    return (
+        <React.Fragment>
+            <h1>Hello App.js</h1>;
             <ul>
                 <li>list1</li>
                 <li>list2</li>
                 <li>list3</li>
             </ul>
-        </div>
-        <p>lorem</p>
-    </div>
-);
-
+        </React.Fragment>
+    );
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(h1, el);
+root.render(<App />);
