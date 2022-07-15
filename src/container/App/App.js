@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const App = () => {
+const App = () => {
     return (
         <>
             <h1>App.js</h1>
         </>
     )
 }
+
+export default App
