@@ -1,0 +1,40 @@
+.add-to-cart-block {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.product-price {
+    font-size: 25px;
+    text-align: center;
+}
+.product-features {
+    margin-bottom: 10px;
+    font-size: 19px;
+    span {
+        font-weight: bold;
+    }
+}
+.product-description {
+    font-size: 19px;
+}
+
+.product-image {
+    text-align: center;
+    img {
+        width: 100px;
+        height: 150px;
+    }
+}
+.product-quantity {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    input {
+        text-align: center;
+    }
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
