@@ -1,6 +1,7 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { ProductListItem } from './ProductListItem'
+import productsArray from 'utils/productsArray'
 
 export const ProductsList = () => {
     return (
@@ -23,21 +24,17 @@ export const ProductsList = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Grid item sm={6} md={4}>
-                    <ProductListItem
-                        name="iPhone XS"
-                        description="This is iPhone XS"
-                        type="phone"
-                        capacity="64"
-                        price="500"
-                    />
-                </Grid>
-                <Grid item sm={6} md={4}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item sm={6} md={4}>
-                    <ProductListItem />
-                </Grid>
+                {productsArray.map((product, i) => (
+                    <Grid item sm={6} md={4} key={i}>
+                        <ProductListItem
+                            name={product.name}
+                            description={product.description}
+                            type={product.type}
+                            capacity={product.capacity}
+                            price={product.price}
+                        />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )
