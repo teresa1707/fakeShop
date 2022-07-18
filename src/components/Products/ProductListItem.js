@@ -46,3 +46,8 @@ ProductListItem.propTypes = {
     capacity: PropTypes.number.isRequired,
     price: PropTypes.number,
 }
+
+// ProductsListItems.defaultProps = {
+//     description: 'No desc...',
+//     image: 'images/no-image.jpg',
+// }
