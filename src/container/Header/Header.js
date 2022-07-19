@@ -8,7 +8,7 @@ import { Container } from '@mui/material'
 import { Menu } from 'components/Menu/Menu'
 import { CartHeader } from 'components/Cart/CartHeader'
 
-export const Header = () => {
+export const Header = ({ cartData }) => {
     return (
         <>
             <AppBar position="static" style={{ background: '#2E3B55' }}>
@@ -31,7 +31,7 @@ export const Header = () => {
                             Fake Shop
                         </Typography>
                         <Menu />
-                        <CartHeader />
+                        <CartHeader cartData={cartData} />
                     </Toolbar>
                 </Container>
             </AppBar>

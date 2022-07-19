@@ -1,12 +1,12 @@
 import React from 'react'
 import './CartHeader.scss'
 
-export const CartHeader = () => {
+export const CartHeader = ({ cartData }) => {
     return (
         <>
             <div className="cartHeader">
-                <div>0</div>
-                <div>0$</div>
+                <div>{cartData.count}</div>
+                <div>{cartData.price}$</div>
             </div>
         </>
     )
