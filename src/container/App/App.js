@@ -5,20 +5,15 @@ import { Main } from 'container/Main/Main'
 import { CssBaseline } from '@mui/material'
 
 export const App = () => {
-    const [cartData, setCartData] = useState({ count: 0, price: 0 })
+    const [productsInCart, setProductsInCart] = useState({ 1: 0, 2: 0 })
 
-    const addProductToCart = (count, price) => {
-        setCartData((prevState) => ({
-            count: prevState.count + count,
-            price: prevState.price + price,
-        }))
-    }
+    const addProductToCart = (count, price) => {}
 
     return (
         <>
             <CssBaseline />
-            <Header cartData={cartData} />
-            <Main cartData={cartData} addProductToCart={addProductToCart} />
+            <Header productsInCart={productsInCart} />
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </>
     )

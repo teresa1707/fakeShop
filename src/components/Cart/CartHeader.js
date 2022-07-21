@@ -1,13 +1,15 @@
+import { object } from 'prop-types'
 import React from 'react'
 import './CartHeader.scss'
 
-export const CartHeader = ({ cartData }) => {
+export const CartHeader = ({ productsInCart }) => {
     return (
-        <>
-            <div className="cartHeader">
-                <div>{cartData.count}</div>
-                <div>{cartData.price}$</div>
-            </div>
-        </>
+        <div className="cartHeader">
+            {Object.keys(productsInCart).map((id) => (
+                <div>
+                    {id}:{productsInCart[id]}
+                </div>
+            ))}
+        </div>
     )
 }
