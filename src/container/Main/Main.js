@@ -2,11 +2,14 @@ import { Container } from '@mui/material'
 import { ProductsList } from 'components/Products/ProductsList'
 import React from 'react'
 
-export const Main = () => {
+export const Main = ({ cartData, addProductToCart }) => {
     return (
         <>
             <Container>
-                <ProductsList />
+                <ProductsList
+                    cartData={cartData}
+                    addProductToCart={addProductToCart}
+                />
             </Container>
         </>
     )

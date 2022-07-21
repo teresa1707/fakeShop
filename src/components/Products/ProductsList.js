@@ -3,7 +3,7 @@ import React from 'react'
 import { ProductListItem } from './ProductListItem'
 import productsArray from 'utils/productsArray'
 
-export const ProductsList = () => {
+export const ProductsList = ({ cartData, addProductToCart }) => {
     return (
         <>
             <Typography
@@ -42,6 +42,8 @@ export const ProductsList = () => {
                                 type={type}
                                 capacity={capacity}
                                 price={price}
+                                cartData={cartData}
+                                addProductToCart={addProductToCart}
                             />
                         </Grid>
                     )
