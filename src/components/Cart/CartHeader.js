@@ -4,7 +4,7 @@ import './CartHeader.scss'
 
 export const CartHeader = ({ productsInCart }) => {
     return (
-        <div className="cartHeader">
+        <div className="cartHeader" key={id}>
             {Object.keys(productsInCart).map((id) => (
                 <div>
                     {id}:{productsInCart[id]}
