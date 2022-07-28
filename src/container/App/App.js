@@ -10,7 +10,7 @@ export const App = () => {
     const addProductToCart = (productId, count) => {
         setProductsInCart((prevState) =>
             Object.assign({}, prevState, {
-                [productId]: prevState[productId] + count,
+                [productId]: prevState[productId] || 0 + count,
             })
         )
     }
