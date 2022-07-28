@@ -7,12 +7,18 @@ import { CssBaseline } from '@mui/material'
 export const App = () => {
     const [productsInCart, setProductsInCart] = useState({ 1: 0, 2: 0 })
 
+    // const addProductToCart = (productId, count) => {
+    //     setProductsInCart((prevState) =>
+    //         Object.assign({}, prevState, {
+    //             [productId]: (prevState[productId] || 0) + count,
+    //         })
+    //     )
+    // }
     const addProductToCart = (productId, count) => {
-        setProductsInCart((prevState) =>
-            Object.assign({}, prevState, {
-                [productId]: prevState[productId] || 0 + count,
-            })
-        )
+        setProductsInCart((prevState) => ({
+            ...prevState,
+            [productId]: (prevState[productId] || 0) + count,
+        }))
     }
 
     return (

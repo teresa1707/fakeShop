@@ -1,16 +1,20 @@
 import { Container } from '@mui/material'
 import { ProductsList } from 'components/Products/ProductsList'
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
-export const Main = ({ cartData, addProductToCart, productId }) => {
+export const Main = ({ cartData, addProductToCart }) => {
     return (
         <>
             <Container>
-                <ProductsList
-                    cartData={cartData}
-                    addProductToCart={addProductToCart}
-                    productId={productId}
-                />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <ProductsList addProductToCart={addProductToCart} />
+                        }
+                    />
+                </Routes>
             </Container>
         </>
     )
