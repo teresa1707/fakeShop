@@ -5,9 +5,9 @@ import { keys } from 'lodash'
 
 export const CartHeader = ({ productsInCart }) => {
     return (
-        <div className="cartHeader" key={id}>
+        <div className="cartHeader">
             {keys(productsInCart).map((id) => (
-                <div>
+                <div key={id}>
                     {id}:{productsInCart[id]}
                 </div>
             ))}

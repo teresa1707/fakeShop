@@ -10,13 +10,14 @@ import './ProductListItem.scss'
 import PropTypes from 'prop-types'
 
 export const ProductListItem = ({
+    id,
     image,
     name,
     description,
     type,
     capacity,
     price,
-    cartData,
+
     addProductToCart,
 }) => {
     const [count, setCount] = useState(1)
@@ -75,7 +76,7 @@ export const ProductListItem = ({
                 <CardActions className="add-to-cart-block">
                     <Button
                         variant="contained"
-                        onClick={() => addProductToCart(count, price)}
+                        onClick={() => addProductToCart(id, count)}
                     >
                         Add to cart
                     </Button>
