@@ -8,6 +8,7 @@ import {
 import React, { useState } from 'react'
 import './ProductListItem.scss'
 import PropTypes from 'prop-types'
+import { Quantity } from 'components/Quantity/Quantity'
 
 export const ProductListItem = ({
     id,
@@ -55,21 +56,11 @@ export const ProductListItem = ({
                     </div>
                     <div className="product-price">{price} $</div>
                     <div className="product-quantity">
-                        <Button
-                            variant="outlined"
-                            onClick={onDecrementClick}
-                            disabled={count <= 1}
-                        >
-                            -
-                        </Button>
-                        <TextField size="small" value={count} />
-                        <Button
-                            variant="outlined"
-                            onClick={onIncrementClick}
-                            disabled={count >= 10}
-                        >
-                            +
-                        </Button>
+                        <Quantity
+                            count={count}
+                            onDecrementClick={onDecrementClick}
+                            onIncrementClick={onIncrementClick}
+                        />
                     </div>
                 </CardContent>
                 <CardActions className="add-to-cart-block">

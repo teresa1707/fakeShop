@@ -7,7 +7,11 @@ import { ShippingPage } from 'pages/Shipping/ShippingPage'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-export const Main = ({ productsInCart, addProductToCart }) => {
+export const Main = ({
+    productsInCart,
+    addProductToCart,
+    removeProductFromCart,
+}) => {
     return (
         <>
             <Container>
@@ -23,7 +27,12 @@ export const Main = ({ productsInCart, addProductToCart }) => {
                     <Route path="/payment" element={<PaymentPage />} />
                     <Route
                         path="/cart"
-                        element={<CartPage productsInCart={productsInCart} />}
+                        element={
+                            <CartPage
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
                     />
                 </Routes>
             </Container>

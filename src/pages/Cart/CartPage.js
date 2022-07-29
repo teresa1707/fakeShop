@@ -1,5 +1,4 @@
 import React from 'react'
-
 import productsArray, { getProductsObject } from 'utils/productsArray'
 import { CartTotal } from 'components/Cart/CartTotal'
 import { CartProductList } from 'components/Cart/CartProductList'
@@ -9,6 +8,7 @@ import { CartProductListItemExtended } from 'components/Cart/CartProductListItem
 export const CartPage = ({
     productsInCart,
     productsObject = getProductsObject(productsArray),
+    removeProductFromCart,
 }) => {
     return (
         <>
@@ -17,6 +17,7 @@ export const CartPage = ({
                 <CartProductList
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
+                    removeProductFromCart={removeProductFromCart}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
