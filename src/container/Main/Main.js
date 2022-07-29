@@ -1,5 +1,6 @@
 import { Container } from '@mui/material'
 import { ProductsList } from 'components/Products/ProductsList'
+import { Reviews } from 'components/Reviews/Reviews'
 import { CartPage } from 'pages/Cart/CartPage'
 import { PaymentPage } from 'pages/Payment/PaymentPage'
 import { ProductsPage } from 'pages/Products/ProductsPage'
@@ -20,7 +21,12 @@ export const Main = ({
                     <Route
                         path="/"
                         element={
-                            <ProductsList addProductToCart={addProductToCart} />
+                            <>
+                                <ProductsList
+                                    addProductToCart={addProductToCart}
+                                />
+                                <Reviews />
+                            </>
                         }
                     />
                     <Route path="/shipping" element={<ShippingPage />} />
