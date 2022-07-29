@@ -1,24 +1,13 @@
-import { object } from 'prop-types'
 import React from 'react'
 import './CartHeader.scss'
-import { keys } from 'lodash'
-import productsArray, { getProductsObject } from 'utils/productsArray'
-import { CartTotal } from './CartTotal'
 
-export const CartHeader = ({
-    productsInCart,
-    productsObject = getProductsObject(productsArray),
-}) => {
+import { CartTotal } from './CartTotal'
+import { CartProductList } from './CartProductList'
+
+export const CartHeader = ({ productsInCart }) => {
     return (
         <div className="cartHeader">
-            <div>
-                {keys(productsInCart).map((productId) => (
-                    <div key={productId}>
-                        {productsObject[productId].name}:
-                        {productsInCart[productId]}
-                    </div>
-                ))}
-            </div>
+            <CartProductList />
 
             <CartTotal productsInCart={productsInCart} />
         </div>
