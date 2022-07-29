@@ -9,6 +9,7 @@ export const CartPage = ({
     productsInCart,
     productsObject = getProductsObject(productsArray),
     removeProductFromCart,
+    changeProductQuantity,
 }) => {
     return (
         <>
@@ -18,6 +19,7 @@ export const CartPage = ({
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
                     removeProductFromCart={removeProductFromCart}
+                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />

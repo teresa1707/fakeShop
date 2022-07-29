@@ -1,13 +1,18 @@
 import React from 'react'
 import { Button, TextField } from '@mui/material'
 
-export const Quantity = ({ onDecrementClick, onIncrementClick, count }) => {
+export const Quantity = ({
+    onDecrementClick,
+    onIncrementClick,
+    count,
+    minCount,
+}) => {
     return (
         <div className="product-quantity">
             <Button
                 variant="contained"
                 onClick={onDecrementClick}
-                disabled={count <= 1}
+                disabled={count <= minCount}
             >
                 -
             </Button>

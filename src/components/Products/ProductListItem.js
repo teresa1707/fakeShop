@@ -1,10 +1,4 @@
-import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    TextField,
-} from '@mui/material'
+import { Button, Card, CardActions, CardContent } from '@mui/material'
 import React, { useState } from 'react'
 import './ProductListItem.scss'
 import PropTypes from 'prop-types'
@@ -19,6 +13,7 @@ export const ProductListItem = ({
     capacity,
     price,
     addProductToCart,
+    minCount,
 }) => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState('red')
@@ -60,6 +55,7 @@ export const ProductListItem = ({
                             count={count}
                             onDecrementClick={onDecrementClick}
                             onIncrementClick={onIncrementClick}
+                            minCount={1}
                         />
                     </div>
                 </CardContent>
