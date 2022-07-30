@@ -5,6 +5,7 @@ import { CartPage } from 'pages/Cart/CartPage'
 import { PaymentPage } from 'pages/Payment/PaymentPage'
 import { ProductsPage } from 'pages/Products/ProductsPage'
 import { ShippingPage } from 'pages/Shipping/ShippingPage'
+import CheckoutPage from 'pages/Checkout/CheckoutPage'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
@@ -32,6 +33,7 @@ export const Main = ({
                     <Route path="/shipping" element={<ShippingPage />} />
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/payment" element={<PaymentPage />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                     <Route
                         path="/cart"
                         element={

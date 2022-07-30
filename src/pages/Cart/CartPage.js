@@ -1,5 +1,5 @@
 import React from 'react'
-import productsArray, { getProductsObject } from 'utils/productsArray'
+import { Link } from 'react-router-dom'
 import { CartTotal } from 'components/Cart/CartTotal'
 import { CartProductList } from 'components/Cart/CartProductList'
 import { Grid } from '@mui/material'
@@ -20,6 +20,7 @@ export const CartPage = ({ removeProductFromCart, changeProductQuantity }) => {
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
+            <Link to="/checkout">Proceed to checkout</Link>
         </>
     )
 }
