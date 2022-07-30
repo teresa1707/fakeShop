@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import './ProductListItem.scss'
 import PropTypes from 'prop-types'
 import { Quantity } from 'components/Quantity/Quantity'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 export const ProductListItem = ({
     id,
@@ -35,12 +37,18 @@ export const ProductListItem = ({
                     <div className="product-image">
                         <img src={image} alt="" />
                     </div>
+                    <Button variant="outlined">
+                        {' '}
+                        <FavoriteBorderIcon />{' '}
+                    </Button>
                     <h2>{name}</h2>
+
                     <p className="product-description">{description}</p>
                     <p className={color}>{color}</p>
                     <Button variant="contained" onClick={changeColor}>
                         change color
                     </Button>
+
                     <div className="product-features">
                         <span>Type : </span>
                         {type}
