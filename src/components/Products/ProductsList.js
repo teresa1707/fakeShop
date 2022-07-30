@@ -1,9 +1,11 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { ProductListItem } from './ProductListItem'
-import productsArray from 'utils/productsArray'
 
-export const ProductsList = ({}) => {
+import { useSelector } from 'react-redux'
+
+export const ProductsList = () => {
+    const prodArray = useSelector((state) => state.products)
     return (
         <>
             <Typography
@@ -24,7 +26,7 @@ export const ProductsList = ({}) => {
                 justifyContent="center"
                 alignItems="center"
             >
-                {productsArray.map(
+                {prodArray.map(
                     ({
                         image,
                         name,
