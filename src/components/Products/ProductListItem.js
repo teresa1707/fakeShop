@@ -15,7 +15,6 @@ export const ProductListItem = ({
     type,
     capacity,
     price,
-    addProductToCart,
 }) => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState('red')
@@ -91,7 +90,13 @@ export const ProductListItem = ({
                 <CardActions className="add-to-cart-block">
                     <Button
                         variant="contained"
-                        onClick={() => addProductToCart(id, count)}
+                        onClick={() =>
+                            dispatch({
+                                type: 'ADD_PRODUCT_TO_CART',
+                                id,
+                                count,
+                            })
+                        }
                     >
                         Add to cart
                     </Button>

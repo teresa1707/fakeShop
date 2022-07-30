@@ -7,12 +7,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from 'react-redux'
 
-export const CartProductListItemExtended = ({
-    product,
-    productCount,
-    removeProductFromCart,
-    changeProductQuantity,
-}) => {
+export const CartProductListItemExtended = ({ product, productCount }) => {
     const isLiked = useSelector((state) => state.productsLikeState[product.id])
     const dispatch = useDispatch()
 
@@ -33,21 +28,34 @@ export const CartProductListItemExtended = ({
                     <Quantity
                         onDecrementClick={() =>
                             productCount === 1
-                                ? removeProductFromCart(product.id)
-                                : changeProductQuantity(
-                                      product.id,
-                                      productCount - 1
-                                  )
+                                ? dispatch({
+                                      type: 'REMOVE_PRODUCT_FROM_CART',
+                                      id: product.id,
+                                  })
+                                : dispatch({
+                                      type: 'CHANGE_PRODUCT_QUANTITY',
+                                      id: product.id,
+                                      quantity: productCount - 1,
+                                  })
                         }
                         onIncrementClick={() =>
-                            changeProductQuantity(product.id, productCount + 1)
+                            dispatch({
+                                type: 'CHANGE_PRODUCT_QUANTITY',
+                                id: product.id,
+                                quantity: productCount + 1,
+                            })
                         }
                         count={productCount}
                         minCount={0}
                     />
                     <br />
                     <Button
-                        onClick={() => removeProductFromCart(product.id)}
+                        onClick={() =>
+                            dispatch({
+                                type: 'REMOVE_PRODUCT_FROM_CART',
+                                id: product.id,
+                            })
+                        }
                         variant="outlined"
                     >
                         <DeleteIcon />
