@@ -15,7 +15,8 @@ export const ProductListItem = ({
     capacity,
     price,
     addProductToCart,
-    minCount,
+    toggleLikeState,
+    isLiked = false,
 }) => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState('red')
@@ -37,9 +38,16 @@ export const ProductListItem = ({
                     <div className="product-image">
                         <img src={image} alt="" />
                     </div>
-                    <Button variant="outlined">
+                    <Button
+                        variant="outlined"
+                        onClick={() => toggleLikeState(id)}
+                    >
                         {' '}
-                        <FavoriteBorderIcon />{' '}
+                        {isLiked ? (
+                            <FavoriteIcon />
+                        ) : (
+                            <FavoriteBorderIcon />
+                        )}{' '}
                     </Button>
                     <h2>{name}</h2>
 

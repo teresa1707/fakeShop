@@ -13,6 +13,8 @@ export const Main = ({
     addProductToCart,
     removeProductFromCart,
     changeProductQuantity,
+    toggleLikeState,
+    productsLikeState,
 }) => {
     return (
         <>
@@ -24,6 +26,8 @@ export const Main = ({
                             <>
                                 <ProductsList
                                     addProductToCart={addProductToCart}
+                                    toggleLikeState={toggleLikeState}
+                                    productsLikeState={productsLikeState}
                                 />
                                 <Reviews />
                             </>
