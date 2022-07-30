@@ -4,13 +4,10 @@ import { CartTotal } from 'components/Cart/CartTotal'
 import { CartProductList } from 'components/Cart/CartProductList'
 import { Grid } from '@mui/material'
 import { CartProductListItemExtended } from 'components/Cart/CartProductListItemExtended'
+import { useSelector } from 'react-redux'
 
-export const CartPage = ({
-    productsInCart,
-    productsObject = getProductsObject(productsArray),
-    removeProductFromCart,
-    changeProductQuantity,
-}) => {
+export const CartPage = ({ removeProductFromCart, changeProductQuantity }) => {
+    const productsInCart = useSelector(({ productsInCart }) => productsInCart)
     return (
         <>
             <h1>Cart Page</h1>

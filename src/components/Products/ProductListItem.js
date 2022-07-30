@@ -31,7 +31,7 @@ export const ProductListItem = ({
         setColor((prevState) => (prevState === 'red' ? 'green' : 'red'))
     }
 
-    const isLiked = useSelector((state) => state[id])
+    const isLiked = useSelector((state) => state.productsLikeState[id])
     const dispatch = useDispatch()
 
     return (

@@ -13,7 +13,7 @@ export const CartProductListItemExtended = ({
     removeProductFromCart,
     changeProductQuantity,
 }) => {
-    const isLiked = useSelector((state) => state[product.id])
+    const isLiked = useSelector((state) => state.productsLikeState[product.id])
     const dispatch = useDispatch()
 
     return (
