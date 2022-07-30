@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { Quantity } from 'components/Quantity/Quantity'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const ProductListItem = ({
     id,
@@ -15,8 +16,6 @@ export const ProductListItem = ({
     capacity,
     price,
     addProductToCart,
-    toggleLikeState,
-    isLiked = false,
 }) => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState('red')
@@ -31,6 +30,10 @@ export const ProductListItem = ({
     const changeColor = () => {
         setColor((prevState) => (prevState === 'red' ? 'green' : 'red'))
     }
+
+    const isLiked = useSelector((state) => state[id])
+    const dispatch = useDispatch()
+
     return (
         <>
             <Card>
@@ -40,7 +43,17 @@ export const ProductListItem = ({
                     </div>
                     <Button
                         variant="outlined"
-                        onClick={() => toggleLikeState(id)}
+                        onClick={() =>
+                            isLiked
+                                ? dispatch({
+                                      type: 'DISLIKE',
+                                      id,
+                                  })
+                                : dispatch({
+                                      type: 'LIKE',
+                                      id,
+                                  })
+                        }
                     >
                         {' '}
                         {isLiked ? (

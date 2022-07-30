@@ -12,18 +12,6 @@ export const App = () => {
         2: true,
     })
 
-    // const addLike = (productId) => {
-    //     setProductsLikeState((prevState) => ({
-    //         ...prevState,
-    //         [productId]: true,
-    //     }))
-    // }
-    const toggleLikeState = (productId) =>
-        setProductsLikeState((prevState) => ({
-            ...prevState,
-            [productId]: !prevState[productId],
-        }))
-
     // const addProductToCart = (productId, count) => {
     //     setProductsInCart((prevState) =>
     //         Object.assign({}, prevState, {
@@ -66,8 +54,6 @@ export const App = () => {
                 productsInCart={productsInCart}
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
-                toggleLikeState={toggleLikeState}
-                productsLikeState={productsLikeState}
             />
             <Footer />
         </>

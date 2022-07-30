@@ -3,12 +3,7 @@ import React from 'react'
 import { ProductListItem } from './ProductListItem'
 import productsArray from 'utils/productsArray'
 
-export const ProductsList = ({
-    cartData,
-    addProductToCart,
-    toggleLikeState,
-    productsLikeState,
-}) => {
+export const ProductsList = ({ cartData, addProductToCart }) => {
     return (
         <>
             <Typography
@@ -50,8 +45,6 @@ export const ProductsList = ({
                                 price={price}
                                 cartData={cartData}
                                 addProductToCart={addProductToCart}
-                                toggleLikeState={toggleLikeState}
-                                isLiked={productsLikeState[id]}
                             />
                         </Grid>
                     )

@@ -8,7 +8,10 @@ import { productsLikeReducer } from 'redux/productsLikeReducer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-const store = createStore(productsLikeReducer)
+const store = createStore(
+    productsLikeReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 root.render(
     <BrowserRouter>
         <Provider store={store}>
