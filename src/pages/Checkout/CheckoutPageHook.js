@@ -1,11 +1,10 @@
 import axios from 'axios'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { keys } from 'lodash'
 import { getProductsObject } from 'utils/productsArray'
 import { CartProductList } from 'components/Cart/CartProductList'
 import { Card } from '@mui/material'
-import { CartTotal } from 'components/Cart/CartTotal'
 
 export const CheckoutPageHook = () => {
     const [orderDetails, setOrderDetails] = useState({
