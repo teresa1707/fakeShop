@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { CartTotal } from 'components/Cart/CartTotal'
 import { CartProductList } from 'components/Cart/CartProductList'
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import { CartProductListItemExtended } from 'components/Cart/CartProductListItemExtended'
 import { useSelector } from 'react-redux'
 
-export const CartPage = ({ removeProductFromCart, changeProductQuantity }) => {
+export const CartPage = () => {
     const productsInCart = useSelector(({ productsInCart }) => productsInCart)
     return (
         <>
@@ -15,12 +15,18 @@ export const CartPage = ({ removeProductFromCart, changeProductQuantity }) => {
                 <CartProductList
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
-                    removeProductFromCart={removeProductFromCart}
-                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
-            <Link to="/checkout">Proceed to checkout</Link>
+            <br />
+            <Button variant="contained">
+                <Link
+                    to="/checkout"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                >
+                    Proceed to checkout
+                </Link>
+            </Button>
         </>
     )
 }

@@ -5,9 +5,11 @@ import productsArray, { getProductsObject } from 'utils/productsArray'
 export const CartTotal = ({
     productsInCart,
     productsObject = getProductsObject(productsArray),
+
+    reset,
 }) => {
     return (
-        <div>
+        <div onChange={reset}>
             Total:{' '}
             {keys(productsInCart).reduce(
                 (total, productId) =>

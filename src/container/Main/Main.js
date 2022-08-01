@@ -5,16 +5,11 @@ import { CartPage } from 'pages/Cart/CartPage'
 import { PaymentPage } from 'pages/Payment/PaymentPage'
 import { ProductsPage } from 'pages/Products/ProductsPage'
 import { ShippingPage } from 'pages/Shipping/ShippingPage'
-import CheckoutPage from 'pages/Checkout/CheckoutPage'
+import { CheckoutPageHook } from 'pages/Checkout/CheckoutPageHook'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-export const Main = ({
-    productsInCart,
-    addProductToCart,
-    removeProductFromCart,
-    changeProductQuantity,
-}) => {
+export const Main = ({ productsInCart }) => {
     return (
         <>
             <Container>
@@ -23,9 +18,7 @@ export const Main = ({
                         path="/"
                         element={
                             <>
-                                <ProductsList
-                                    addProductToCart={addProductToCart}
-                                />
+                                <ProductsList />
                                 <Reviews />
                             </>
                         }
@@ -33,16 +26,10 @@ export const Main = ({
                     <Route path="/shipping" element={<ShippingPage />} />
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/payment" element={<PaymentPage />} />
-                    <Route path="/checkout" element={<CheckoutPage />} />
+                    <Route path="/checkout" element={<CheckoutPageHook />} />
                     <Route
                         path="/cart"
-                        element={
-                            <CartPage
-                                productsInCart={productsInCart}
-                                removeProductFromCart={removeProductFromCart}
-                                changeProductQuantity={changeProductQuantity}
-                            />
-                        }
+                        element={<CartPage productsInCart={productsInCart} />}
                     />
                 </Routes>
             </Container>
