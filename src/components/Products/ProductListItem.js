@@ -6,6 +6,7 @@ import { Quantity } from 'components/Quantity/Quantity'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 export const ProductListItem = ({
     id,
@@ -56,7 +57,9 @@ export const ProductListItem = ({
                             <FavoriteBorderIcon />
                         )}{' '}
                     </Button>
-                    <h2>{name}</h2>
+                    <Link to={`/products/${id}`}>
+                        <h2>{name}</h2>
+                    </Link>
 
                     <p className="product-description">{description}</p>
 

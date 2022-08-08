@@ -8,6 +8,7 @@ import { ShippingPage } from 'pages/Shipping/ShippingPage'
 import { CheckoutPageHook } from 'pages/Checkout/CheckoutPageHook'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { ProductPageItem } from 'pages/Products/ProductPageItem'
 
 export const Main = ({ productsInCart }) => {
     return (
@@ -31,6 +32,7 @@ export const Main = ({ productsInCart }) => {
                         path="/cart"
                         element={<CartPage productsInCart={productsInCart} />}
                     />
+                    <Route path="/products/:id" element={<ProductPageItem />} />
                 </Routes>
             </Container>
         </>
