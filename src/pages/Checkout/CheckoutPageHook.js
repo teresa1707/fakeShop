@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 import { keys } from 'lodash'
 import { getProductsObject } from 'utils/productsArray'
 import { CartProductList } from 'components/Cart/CartProductList'
-import { Card } from '@mui/material'
+import { Button, Card } from '@mui/material'
+import './Checkout.scss'
 
 export const CheckoutPageHook = () => {
     const [orderDetails, setOrderDetails] = useState({
@@ -35,6 +36,13 @@ export const CheckoutPageHook = () => {
                         placeholder="Your name"
                         value={orderDetails.name}
                         onChange={orderName}
+                        style={{
+                            marginBottom: '10px',
+                            padding: 20,
+                            background: '#2E3B55',
+                            color: 'white',
+                            borderRadius: 8,
+                        }}
                     />
                 </div>
                 <div>
@@ -43,9 +51,27 @@ export const CheckoutPageHook = () => {
                         placeholder="Your address"
                         value={orderDetails.address}
                         onChange={orderAddress}
+                        style={{
+                            marginBottom: '10px',
+                            padding: 20,
+                            background: '#2E3B55',
+                            color: 'white',
+                            borderRadius: 8,
+                        }}
                     />
                 </div>
-                <button>Send</button>
+                <button
+                    className="button"
+                    style={{
+                        width: 210,
+                        height: 40,
+                        color: 'white',
+                        background: '#2E3B55',
+                        borderRadius: 8,
+                    }}
+                >
+                    CONFIRM
+                </button>
             </form>
         )
     }

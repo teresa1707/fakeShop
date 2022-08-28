@@ -1,3 +1,10 @@
 .renderMessage {
     text-align: center;
 }
+.button:hover {
+    color: #2e3b55 !important;
+    background-color: azure !important;
+}
+::placeholder {
+    color: white;
+}
