@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { keys } from 'lodash'
 import { getProductsObject } from 'utils/productsArray'
 import { CartProductList } from 'components/Cart/CartProductList'
-import { Button, Card } from '@mui/material'
+import { Card } from '@mui/material'
 import './Checkout.scss'
 
 export const CheckoutPageHook = () => {
