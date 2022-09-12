@@ -8,8 +8,9 @@ import {
     compose,
     applyMiddleware,
 } from 'redux'
-import { rootReducer } from 'redux/rootReducer'
+
 import thunk from 'redux-thunk'
+import { rootReducer } from 'redux/rootReducer'
 
 const middleware = [thunk]
 
